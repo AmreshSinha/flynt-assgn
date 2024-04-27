@@ -8,8 +8,9 @@
     "apps/*"
   ],
   "scripts": {
-    "dev:backend": "yarn --cwd apps/backend dev",
     "dev:frontend": "yarn --cwd apps/frontend dev",
+    "backend:prisma-generate": "yarn --cwd apps/backend prisma-generate",
+    "dev:backend": "yarn backend:prisma-generate && yarn --cwd apps/backend dev",
     "dev": "npm-run-all --parallel dev:backend dev:frontend"
   },
   "devDependencies": {
